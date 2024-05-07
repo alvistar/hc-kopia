@@ -1,0 +1,13 @@
+[Unit]
+Description=Kopia Repository Server
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/kopia server start --address=0.0.0.0:51515 --server-password=kopia --insecure
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
